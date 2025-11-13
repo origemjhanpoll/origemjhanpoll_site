@@ -3,11 +3,13 @@ import SocialLinks from "~/components/social_links";
 import { FaInstagram, FaLinkedin, FaTiktok, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import MainBanner from "~/components/main_banner";
 import Projects from "~/components/projects";
+import Local from "~/components/local";
+import Actions from "~/components/actions";
 
 export default function Home() {
   return (
-    <div className="flex flex-col md:flex-row h-screen gap-4 p-4">
-      <div className="flex flex-col w-full lg:w-100 gap-y-4">
+    <div className="flex flex-col md:flex-row h-screen md:gap-4 gap-2 md:p-4 p-2">
+      <div className="flex flex-col w-full lg:w-100 md:gap-y-4 gap-y-2">
         <ProfileCard
           username={"origemjhanpoll"}
           name={"Origem Jhanpoll"}
@@ -17,19 +19,19 @@ export default function Home() {
           tags={["JavaScript", "TypeScript", "React", "Node.js"]}
           photoUrl={"https://framerusercontent.com/images/PVRe5xa6b75JHWq2R6KN2cO8z0.png"}
         />
-        <SocialLinks
-          icons={[
-            { icon: <FaYoutube />, href: "#", label: "YouTube" },
-            { icon: <FaInstagram />, href: "#", label: "Instagram" },
-            { icon: <FaTiktok />, href: "#", label: "TikTok" },
-            { icon: <FaXTwitter />, href: "#", label: "X (Twitter)" },
-            { icon: <FaLinkedin />, href: "#", label: "LinkedIn" },
-          ]} />
+        <Local
+          name="My Local Place"
+          address="123 Main St, Anytown"
+          description="A cozy place to hang out and relax."
+        />
+        <div className="hidden md:block">
+          <Actions />
+        </div>
       </div>
       <div className="hidden flex-1 lg:flex">
         <MainBanner url={"https://images.pexels.com/photos/2842827/pexels-photo-2842827.jpeg"} />
       </div>
-      <div className="flex flex-col w-full lg:w-100 gap-y-4">
+      <div className="flex flex-col-reverse md:flex-col lg:w-100 w-full md:gap-4 gap-2">
         <SocialLinks
           icons={[
             { icon: <FaYoutube />, href: "#", label: "YouTube" },

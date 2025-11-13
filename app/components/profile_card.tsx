@@ -21,7 +21,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 	photoUrl
 }) => {
 	return (
-		<section className="flex flex-1 flex-col bg-[var(--color-card-bg)] text-[var(--color-text-primary)] p-4 rounded-xl font-sans">
+		<section className="flex flex-1 flex-col bg-[var(--color-card-bg)] text-[var(--color-text-primary)] p-4 rounded-3xl font-sans">
 			<div className="flex-shrink-0">
 				{photoUrl ? (
 					<img
@@ -37,13 +37,21 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 				<span className="text-sm text-[var(--color-text-muted)]">@{username}</span>
 				<h1 className="text-2xl my-1">Hello! I'm {name}</h1>
 				<h2 className="text-xl text-[var(--color-text-secondary)]">{role}</h2>
-				<p className="my-4 leading-relaxed">{description}</p>
-				{/* <div className="flex flex-wrap gap-2">
+				<p className="my-4 leading-relaxed break-words">{description}</p>
+				<div className="flex flex-wrap gap-2">
 					{age && <span className="bg-[var(--color-tag-bg)] px-3 py-2 rounded-lg text-sm">{age} y.o.</span>}
 					{tags.map((tag, index) => (
 						<span key={index} className="bg-[var(--color-tag-bg)] px-3 py-2 rounded-lg text-sm">{tag}</span>
 					))}
-				</div> */}
+				</div>
+			</div>
+			<div className="flex md:hidden flex-row justify-center items-center gap-4 bg-[var(--color-card-bg)] text-[var(--color-text-primary)] rounded-3xl font-sans h-14 mt-6 mb-2">
+				<button className="w-full bg-white text-black font-semibold px-8 py-3 rounded-full transition hover:bg-neutral-200">
+					Contact me
+				</button>
+				<button className="bg-neutral-700 text-white font-medium px-8 py-3 rounded-full transition hover:bg-neutral-600">
+					CV
+				</button>
 			</div>
 		</section>
 	);

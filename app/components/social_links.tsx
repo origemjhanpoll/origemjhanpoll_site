@@ -15,14 +15,14 @@ const SocialLinks: React.FC<SocialLinksProps> = ({
   icons: items,
 }) => {
   return (
-    <section className="flex flex-1 bg-[var(--color-card-bg)] text-[var(--color-text-primary)] rounded-xl p-4 font-sans">
+    <section className="flex flex-1 bg-[var(--color-card-bg)] text-[var(--color-text-primary)] rounded-3xl p-4 font-sans">
       <div className="flex flex-wrap gap-4">
         {items.map((item, index) => (
           <a
             key={index}
             href={item.href}
             aria-label={item.label}
-            className="grow p-8 flex items-center justify-center bg-gray-800 rounded-xl hover:bg-gray-700 transition"
+            className="grow p-8 flex items-center justify-center bg-gray-800 rounded-3xl hover:bg-gray-700 transition"
           >
             {item.icon}
           </a>
